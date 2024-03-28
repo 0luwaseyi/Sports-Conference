@@ -39,7 +39,7 @@ const Home: React.FC = () => {
             
 
               <div className="">
-                <p className="text-[#fff] mx-[5vw] text-xl lg:text-xl text-center"><em>Join global leaders and experts as we unlock the secrets to success,<br className="hidden lg:block"/> foster innovation, and propel the next generation of athletes to Olympic glory.</em></p>
+                <p className="text-[#fff] mx-[5vw] text-lg lg:text-xl text-center">Join global leaders and experts as we unlock the secrets to success,<br className="hidden lg:block"/> foster innovation, and propel the next generation of athletes to Olympic glory.</p>
               </div>
 
               <div className="p-5">

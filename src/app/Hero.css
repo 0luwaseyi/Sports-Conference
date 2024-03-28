@@ -1,0 +1,43 @@
+.back-img{
+    width: auto;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.947)), url("/image1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.back-pic{
+    width: auto;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.947)), url("/image2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.backer-img{
+    width: auto;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.947)), url("/image3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.backer-pic{
+    width: auto;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.947)), url("/image4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.shadow-head{
+    text-shadow: 2px 2px 4px #fff,
+                 2px 2px 3px #ff1100;    
+}

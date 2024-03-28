@@ -46,11 +46,11 @@ const SignupForm: React.FC = () => {
 
   return (
     <div className='flex flex-col space-y-3'>
-      <div className='absolute flex flex-col space-y-3 mt-[20vw] top-0 left-0 right-0 text-center'>
-      <h1 className='text-4xl lg:text-5xl my-[2.5vw] mx-[4vw] font-bold text-center'>Join Us Today!</h1>
-      <p className='text-lg mx-[3vw] my-[4vw] lg:text-sm text-[#808080] text-center'>Join global leaders and experts as we unlock the secrets to success,<br className='hidden lg:block'/> foster innovation, and propel the next generation of athletes to Olympic glory.</p>
+      <div className='absolute flex flex-col space-y-3 mb-[8vw]  top-[10vw] lg:top-[4vw]  left-0 right-0 text-center'>
+      <h1 className='text-4xl lg:text-5xl mt-[7.5vw] lg:mt-[4vw]  lg:mx-[4vw] font-bold text-center'>Join Us Today!</h1>
+      <p className='text-lg  mx-[6vw] lg:mx-[3vw] my-[4vw] lg:text-sm text-[#808080] text-center'>Join global leaders and experts as we unlock the secrets to success,<br className='hidden lg:block'/> foster innovation, and propel the next generation of athletes to Olympic glory.</p>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', marginTop:"20px" }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', marginTop:"80px" }}>
         <form onSubmit={formik.handleSubmit} style={{ width: '330px', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
           <label htmlFor="firstName">First Name</label>
           <input

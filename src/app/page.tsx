@@ -17,7 +17,7 @@ const Home: React.FC = () => {
           id="tsparticlesfullpage"
           minSize={0.6}
           maxSize={1.4}
-          particleDensity={30}
+          particleDensity={70}
           className="w-full h-full z-10"
           particleColor="#fff"
         />
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
 
               <div className="p-5">
                 <Link href="/register">
-                 <button className="flex p-5 justify-center items-center p-3 text-[#000] border-[#fff] bg-[#fff] rounded-md">Register</button>
+                 <button className="flex part-link p-5 relative justify-center items-center p-3 text-[#000] border-[#fff] bg-[#fff] rounded-md">Register</button>
                  </Link>
               </div>
             </div>

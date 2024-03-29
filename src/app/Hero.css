@@ -39,12 +39,11 @@
 }
 
 .shadow-head{
-    text-shadow: 2px 2px 4px #fff,
-                 2px 2px 3px #ff1100;    
+    text-shadow: 1px 1px 2px #fff,
+                 1px 1px 2px #ff1100;    
 }
 
 
-#tsparticlesfullpage {
-    background-color: #f3ebeb00;
-   
-  }
+.part-link{
+    z-index: 9999;
+}

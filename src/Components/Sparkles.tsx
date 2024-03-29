@@ -392,9 +392,9 @@ export const SparklesCore = (props: ParticlesProps) => {
                 color: {
                   value: "#fff",
                 },
-                consent: true,
+                consent: false,
                 distance: 100,
-                enable: true,
+                enable: false,
                 frequency: 1,
                 opacity: 1,
                 shadow: {

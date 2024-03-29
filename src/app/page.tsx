@@ -5,10 +5,23 @@ import { Carousel } from 'react-responsive-carousel';
 import Link from "next/link";
 import "./Hero.css"
 import Image from "next/image"
+import { SparklesCore } from "@/Components/Sparkles";
+
 
 const Home: React.FC = () => {
     return (
         <div>
+
+<div className="w-full absolute inset-0 z-10 h-screen">
+        <SparklesCore
+          id="tsparticlesfullpage"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={30}
+          className="w-full h-full z-10"
+          particleColor="#fff"
+        />
+      </div>
             <Carousel autoPlay infiniteLoop interval={8000}  showArrows={false} showThumbs={false}>
                 {[ // Wrap the single element inside an array
                     <div className='overflow-hidden h-screen z-10 object-cover relative back-img bg-center bg-cover' key="image1"> {/* Provide a unique key */}

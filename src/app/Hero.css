@@ -2,7 +2,7 @@
     width: auto;
     height: 100vh;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.947)), url("/image1.jpg");
+    background: linear-gradient(rgba(26, 2, 35, 0.792), rgba(0, 0, 0, 0.961)), url("/image1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -13,7 +13,7 @@
     width: auto;
     height: 100vh;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.947)), url("/image2.jpg");
+    background: linear-gradient(rgba(26, 2, 35, 0.792), rgba(0, 0, 0, 0.961)), url("/image2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -24,7 +24,7 @@
     width: auto;
     height: 100vh;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.947)), url("/image3.jpg");
+    background: linear-gradient(rgba(26, 2, 35, 0.792), rgba(0, 0, 0, 0.961)), url("/image3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -33,7 +33,7 @@
     width: auto;
     height: 100vh;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.947)), url("/image4.jpg");
+    background: linear-gradient(rgba(26, 2, 35, 0.792), rgba(0, 0, 0, 0.961)), url("/image4.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -42,3 +42,9 @@
     text-shadow: 2px 2px 4px #fff,
                  2px 2px 3px #ff1100;    
 }
+
+
+#tsparticlesfullpage {
+    background-color: #f3ebeb00;
+   
+  }

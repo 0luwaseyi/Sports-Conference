@@ -22,20 +22,20 @@ const Home: React.FC = () => {
           particleColor="#fff"
         />
       </div>
-            <Carousel autoPlay infiniteLoop interval={8000}  showArrows={false} showThumbs={false}>
-                {[ // Wrap the single element inside an array
-                    <div className='overflow-hidden h-screen z-10 object-cover relative back-img bg-center bg-cover' key="image1"> {/* Provide a unique key */}
+            <Carousel autoPlay infiniteLoop interval={8000}   showArrows={false} showThumbs={false}>
+                {[ 
+                    <div className='overflow-hidden  h-screen z-10 object-cover relative back-img bg-center bg-cover' key="image1"> {/* Provide a unique key */}
                     </div>,
 
-                      <div className='overflow-hidden h-screen z-10 object-cover relative back-pic' key="image1"> {/* Provide a unique key */}
+                      <div className='overflow-hidden transition ease-in delay-1000 duration-1000 h-screen z-10 object-cover relative back-pic' key="image1"> {/* Provide a unique key */}
 
                       </div>,
 
-                    <div className='overflow-hidden h-screen z-10 object-cover relative backer-img' key="image1"> {/* Provide a unique key */}
+                    <div className='overflow-hidden transition ease-in delay-1000 duration-1000 h-screen z-10 object-cover relative backer-img' key="image1"> {/* Provide a unique key */}
 
                     </div>,
  
-                      <div className='overflow-hidden h-screen z-10 object-cover relative backer-pic' key="image1"> {/* Provide a unique key */}
+                      <div className='overflow-hidden transition ease-in delay-1000 duration-1000 h-screen z-10 object-cover relative backer-pic' key="image1"> {/* Provide a unique key */}
  
                       </div>
                 ]}
@@ -80,35 +80,4 @@ export default Home;
 
 
 
-	{/*<Carousel  showStatus={false} showIndicators={false} showArrows={false} showThumbs={false}> 
-     
-				<div className='overflow-hidden h-screen z-10 object-cover relative'> 
-					<img src="/image1.jpg" className='relative bg-center bg-cover inset-0 w-full h-full brightness-50 bg-blue-400' alt="image1"/> 
-					<h1 className="absolute top-0 left-0 right-0 bottom-0 text-[#fff] font-bold text-5xl mt-[75vw] lg:text-6xl lg:mt-[17vw]"><em>International Sports Conference</em></h1> 
-          <p className='text-white absolute top-[100vw] text-center mx-[5vw] text-[3.9vw] lg:top-[25vw] lg:text-[1.5vw] left-0 right-0 bottom-0 font-medium'>Join global leaders and experts as we unlock the secrets to success,<br/> foster innovation, and propel the next generation of athletes to Olympic glory.</p>
-         <Link href ="/register"><button className='absolute top-[125vw] lg:top-[31vw] lg:text-[1.4vw] left-[42vw] border-[#fff] w-[34vw] h-[5vh] lg:h-[7vh] lg:w-[14vw] bg-[#fff] text-[#000] rounded-md'>Register</button>
-</Link> 
-				</div> 
-				<div className='overflow-hidden h-screen z-10 object-cover relative'> 
-					<img src="/image2.jpg" className='relative bg-center bg-cover inset-0 w-full h-full brightness-50 bg-blue-400' alt="image1"/> 
-					<h1 className="absolute top-0 left-0 right-0 bottom-0 text-[#fff] font-bold text-[8vw] mt-[75vw] lg:text-[5vw] lg:mt-[17vw]"><em>International Sports Conference</em></h1> 
-          <p className='text-white absolute top-[100vw] text-center mx-[5vw] text-[3.5vw] lg:top-[25vw] lg:text-[1.5vw] left-0 right-0 bottom-0 font-medium'>Join global leaders and experts as we unlock the secrets to success,<br/> foster innovation, and propel the next generation of athletes to Olympic glory.</p>
-         <Link href ="/register"><button className='absolute top-[120vw] lg:top-[31vw] lg:text-[1.4vw] left-[42vw] right-0 bottom-0 border-[#fff] w-[34vw] h-[5vh] lg:h-[7vh] lg:w-[14vw] bg-[#fff] text-[#000] rounded-md'>Register</button>
-</Link> 
-				</div>  
-				<div className='overflow-hidden h-screen z-10 object-cover relative'> 
-					<img src="/image3.jpg" className='relative bg-center bg-cover inset-0 w-full h-full brightness-50 bg-blue-400' alt="image1"/> 
-					<h1 className="absolute top-0 left-0 right-0 bottom-0 text-[#fff] font-bold text-[8vw] mt-[75vw] lg:text-[5vw] lg:mt-[17vw]"><em>International Sports Conference</em></h1> 
-          <p className='text-white absolute top-[100vw] text-center mx-[5vw] text-[3.5vw] lg:top-[25vw] lg:text-[1.5vw] left-0 right-0 bottom-0 font-medium'>Join global leaders and experts as we unlock the secrets to success,<br/> foster innovation, and propel the next generation of athletes to Olympic glory.</p>
-         <Link href ="/register"><button className='absolute top-[120vw] lg:top-[31vw] lg:text-[1.4vw] left-[42vw] right-0 bottom-0 border-[#fff] w-[34vw] h-[5vh] lg:h-[7vh] lg:w-[14vw] bg-[#fff] text-[#000] rounded-md'>Register</button>
-</Link> 
-				</div> 
-        <div className='overflow-hidden h-screen z-10 object-cover relative'> 
-					<img src="/image4.jpg" className='relative bg-center bg-cover inset-0 w-full h-full brightness-50 bg-blue-400' alt="image1"/> 
-					<h1 className="absolute top-0 left-0 right-0 bottom-0 text-[#fff] font-bold text-[8vw] mt-[75vw] lg:text-[5vw] lg:mt-[17vw]"><em>International Sports Conference</em></h1> 
-          <p className='text-white absolute top-[100vw] text-center mx-[5vw] text-[3.5vw] lg:top-[25vw] lg:text-[1.5vw] left-0 right-0 bottom-0 font-medium'>Join global leaders and experts as we unlock the secrets to success,<br/> foster innovation, and propel the next generation of athletes to Olympic glory.</p>
-         <Link href ="/register"><button className='absolute top-[120vw] lg:top-[31vw] lg:text-[1.4vw] left-[42vw] right-0 bottom-0 border-[#fff] w-[34vw] h-[5vh] lg:h-[7vh] lg:w-[14vw] bg-[#fff] text-[#000] rounded-md'>Register</button>
-</Link> 
-				</div> 
-			
-    </Carousel> */}
+	

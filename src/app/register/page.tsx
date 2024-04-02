@@ -1,6 +1,7 @@
 "use client";
 
 import { useFormik } from 'formik';
+import "../Hero.css"
 
 interface FormValues {
   firstName: string;
@@ -54,7 +55,7 @@ const SignupForm: React.FC = () => {
         <form onSubmit={formik.handleSubmit} style={{ width: '330px', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
           <label htmlFor="firstName">First Name</label>
           <input
-            className='border border-gray-300 rounded-md p-2 w-full focus:border-blue-500'
+            className='border-style border-gray-300 rounded-md p-2 w-full focus:border-blue-500'
             id="firstName"
             name="firstName"
             type="text"
@@ -66,7 +67,7 @@ const SignupForm: React.FC = () => {
 
           <label htmlFor="lastName">Last Name</label>
           <input
-            className='border border-gray-300 rounded-md p-2 w-full focus:border-blue-500'
+            className='border-style border-gray-300 rounded-md p-2 w-full'
             id="lastName"
             name="lastName"
             type="text"

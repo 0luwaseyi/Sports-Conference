@@ -2,7 +2,7 @@
     width: auto;
     height: 100vh;
     position: relative;
-    background: linear-gradient(rgba(26, 2, 35, 0.792), rgba(0, 0, 0, 0.961)), url("/image1.jpg");
+    background: linear-gradient(rgba(0 ,0 , 0, 0.8), rgba(0, 0, 0, 0.961)), url("/image1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -13,7 +13,7 @@
     width: auto;
     height: 100vh;
     position: relative;
-    background: linear-gradient(rgba(26, 2, 35, 0.792), rgba(0, 0, 0, 0.961)), url("/image2.jpg");
+    background: linear-gradient(rgba(0 ,0 , 0, 0.8), rgba(0, 0, 0, 0.961)), url("/image2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -24,18 +24,20 @@
     width: auto;
     height: 100vh;
     position: relative;
-    background: linear-gradient(rgba(26, 2, 35, 0.792), rgba(0, 0, 0, 0.961)), url("/image3.jpg");
+    background: linear-gradient(rgba(0 ,0 , 0, 0.8), rgba(0, 0, 0, 0.961)), url("/image3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .backer-pic{
     width: auto;
     height: 100vh;
     position: relative;
-    background: linear-gradient(rgba(26, 2, 35, 0.792), rgba(0, 0, 0, 0.961)), url("/image4.jpg");
+    background: linear-gradient(rgba(0 ,0 , 0, 0.8), rgba(0, 0, 0, 0.961)), url("/image4.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .shadow-head{
@@ -46,4 +48,10 @@
 
 .part-link{
     z-index: 9999;
+}
+
+.border-style:focus{
+    border-color: blue;
+    border: 2px solid gray;
+
 }

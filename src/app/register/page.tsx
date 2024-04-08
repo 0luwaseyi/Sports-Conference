@@ -1,7 +1,12 @@
 "use client";
 
 import { useFormik } from 'formik';
+import axios from 'axios';
+import { AxiosResponse } from 'axios';
+import Router from 'next/router';
 import "../Hero.css"
+import Image from "next/image"
+import Link from "next/link"
 
 interface FormValues {
   firstName: string;
@@ -9,7 +14,14 @@ interface FormValues {
   email: string;
 }
 
+interface RegisterResponse {
+  filePath: string;
+  // Add any other properties returned in the response if needed
+}
+
 const validate = (values: FormValues) => {
+
+  
   const errors: Partial<FormValues> = {};
   if (!values.firstName) {
     errors.firstName = 'Required';
@@ -40,16 +52,33 @@ const SignupForm: React.FC = () => {
       email: '',
     },
     validate,
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: async values => {
+      try {
+     
+        formik.resetForm()
+        const userDetails = JSON.parse(localStorage.getItem('userDetails') || '[]');
+    userDetails.push(values);
+    localStorage.setItem('userDetails', JSON.stringify(userDetails));
+        const response: AxiosResponse<RegisterResponse> = await axios.post('/api/hello', values);
+        const { filePath } = response.data;
+        window.location.replace("/thank-you")
+      
+      } catch (error) {
+        alert('Registration failed!');
+      }
     },
   });
 
   return (
-    <div className='flex flex-col space-y-3'>
-      <div className='absolute flex flex-col space-y-3 mb-[8vw]  top-[10vw] lg:top-[4vw]  left-0 right-0 text-center'>
-      <h1 className='text-4xl lg:text-5xl mt-[7.5vw] lg:mt-[4vw]  lg:mx-[4vw] font-bold text-center'>Join Us Today!</h1>
-      <p className='text-lg  mx-[6vw] lg:mx-[3vw] my-[4vw] lg:text-sm text-[#808080] text-center'>Join global leaders and experts as we unlock the secrets to success,<br className='hidden lg:block'/> foster innovation, and propel the next generation of athletes to Olympic glory.</p>
+    <div>
+      <div className='flex flex-col space-y-3'>
+      <div className='absolute flex flex-col space-y-3  top-[10vw] lg:top-[4vw]  left-0 right-0 text-center'>
+        <div className='flex space-x-3 align-items items-center justify-center'>
+        <Image src="/logo.png" alt = "logo" width={70} height={70}/>
+        <Image src="/logoone.png" alt = "logo" width={90} height={90}/>
+        </div>
+      <h1 className='text-2xl lg:text-3xl mt-[7.5vw] lg:mt-[4vw]  lg:mx-[4vw] font-bold text-center'>Register Now!</h1>
+      <p className='text-lg  mx-[6vw] lg:mx-[3vw] my-[4vw] lg:text-sm text-[#808080] text-center'>Just a step away from becoming the next big thing in sports!</p>
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', marginTop:"80px" }}>
         <form onSubmit={formik.handleSubmit} style={{ width: '330px', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
@@ -89,10 +118,26 @@ const SignupForm: React.FC = () => {
           />
           {formik.errors.email ? <div>{formik.errors.email}</div> : null}
 
-          <button type="submit" style={{ width: '100%', padding: '20px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '3px', cursor: 'pointer' }}>Register</button>
+          <button type="submit" style={{ width: '100%', padding: '20px', backgroundColor: '#6c63ff', color: '#fff', border: 'none', borderRadius: '3px', cursor: 'pointer' }}>Register</button>
+      
         </form>
+
+      
       </div>
+     
     </div>
+    <div className='flex justify-center align-items items-center space-x-3 mt-[-50vw]  lg:mt-[-10vw]'>
+      <Link href="https://twitter.com/officialciscoau">
+      <Image src="/twitter.svg" alt="twitter" width={70} height={50}/>
+      </Link>
+          <Link href="https://www.instagram.com/officialciscoau?igsh=MXdmNmYxazkwNW9mdw%3D%3D&utm_source=qr">
+          <Image src="/instagram.svg" alt="instagram" width={50} height={50}/>
+          </Link>
+        
+        </div>
+
+    </div>
+    
   );
 };
 

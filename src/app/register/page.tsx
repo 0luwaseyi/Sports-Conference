@@ -14,7 +14,7 @@ import { collection, addDoc} from 'firebase/firestore'
 
 async function addDataToFireStore(firstName:string, lastName:string, email:string){
   try{
-    const docRef = await addDoc(collection(db, "details"), {
+    const docRef = await addDoc(collection(db, "users"), {
       firstName: firstName,
       lastName: lastName,
       email: email,
@@ -101,36 +101,39 @@ const SignupForm: React.FC = () => {
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', marginTop:"80px" }}>
         <form onSubmit={formik.handleSubmit} style={{ width: '330px', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
-          <label htmlFor="firstName">First Name</label>
+          <label htmlFor="firstName" className='font-bold'>First Name</label>
           <input
-            className='border-style border-gray-300 rounded-md p-2 w-full focus:border-blue-500'
+            className='border-style border-gray-300 rounded-md p-2 w-full focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500'
             id="firstName"
             name="firstName"
             type="text"
+            placeholder='John'
             onChange={formik.handleChange}
             value={formik.values.firstName}
             style={{ width: '100%', padding: '8px', marginBottom: '10px', border: '1px solid #ccc', borderRadius: '3px' }}
           />
           {formik.errors.firstName ? <div>{formik.errors.firstName}</div> : null}
 
-          <label htmlFor="lastName">Last Name</label>
+          <label htmlFor="lastName" className='font-bold'>Last Name</label>
           <input
-            className='border-style border-gray-300 rounded-md p-2 w-full'
+            className='border-style border-gray-300 rounded-md p-2 w-full focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500'
             id="lastName"
             name="lastName"
             type="text"
+            placeholder='Smith'
             onChange={formik.handleChange}
             value={formik.values.lastName}
             style={{ width: '100%', padding: '8px', marginBottom: '10px', border: '1px solid #ccc', borderRadius: '3px' }}
           />
           {formik.errors.lastName ? <div>{formik.errors.lastName}</div> : null}
 
-          <label htmlFor="email">Email Address</label>
+          <label htmlFor="email" className='font-bold'>Email Address</label>
           <input
-           className='border border-gray-300 rounded-md p-2 w-full focus:border-blue-500'
+           className='border border-gray-300 rounded-md p-2 w-full focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500'
             id="email"
             name="email"
             type="email"
+            placeholder='Johnsmith@gmail.com'
             onChange={formik.handleChange}
             value={formik.values.email}
             style={{ width: '100%', padding: '8px', marginBottom: '10px', border: '1px solid #ccc', borderRadius: '3px' }}

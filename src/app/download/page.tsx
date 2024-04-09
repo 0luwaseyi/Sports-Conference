@@ -1,43 +1,63 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
+import { useState, useEffect } from "react";
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "../firebaseConfig";
 
-const UserDetailsPage: React.FC = () => {
-  const [userDetails, setUserDetails] = useState([]);
+interface UserData {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  // Define other properties according to your data structure
+}
+
+async function fetchDataFromFirestore(): Promise<UserData[]> {
+  const querySnapshot = await getDocs(collection(db, "details"));
+
+  const data: UserData[] = [];
+  querySnapshot.forEach((doc) => {
+    data.push({ id: doc.id, ...doc.data() } as UserData);
+  });
+  return data;
+}
+
+export default function UserList() {
+  const [userData, setUserData] = useState<UserData[]>([]);
 
   useEffect(() => {
-    // Fetch user details from local storage
-    const storedUserDetails = localStorage.getItem('userDetails');
-    if (storedUserDetails) {
-      setUserDetails(JSON.parse(storedUserDetails));
+    async function fetchData() {
+      const data = await fetchDataFromFirestore();
+      setUserData(data);
     }
+
+    fetchData();
   }, []);
 
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold mb-4">Registered details</h1>
-      <div className="overflow-x-auto">
-        <table className="w-full table-auto">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="px-4 py-2">First Name</th>
-              <th className="px-4 py-2">Last Name</th>
-              <th className="px-4 py-2">Email</th>
+    <div className="overflow-x-auto">
+      <table className="table-auto min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50">
+          <tr>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">First Name</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Name</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+          </tr>
+        </thead>
+        <tbody className="bg-white divide-y divide-gray-200">
+          {userData.map((user, index) => (
+            <tr key={user.id}>
+              <td className="px-6 py-4 whitespace-nowrap">{index + 1}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{user.firstName}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{user.lastName}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{user.email}</td>
             </tr>
-          </thead>
-          <tbody>
-            {userDetails.map((user: any, index: number) => (
-              <tr key={index} className={index % 2 === 0 ? 'bg-gray-100' : ''}>
-                <td className="border px-4 py-2">{user.firstName}</td>
-                <td className="border px-4 py-2">{user.lastName}</td>
-                <td className="border px-4 py-2">{user.email}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
-};
+}
 
-export default UserDetailsPage;

@@ -7,6 +7,25 @@ import Router from 'next/router';
 import "../Hero.css"
 import Image from "next/image"
 import Link from "next/link"
+import { db }from "../firebaseConfig"
+import { collection, addDoc} from 'firebase/firestore'
+
+
+
+async function addDataToFireStore(firstName:string, lastName:string, email:string){
+  try{
+    const docRef = await addDoc(collection(db, "details"), {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+    });
+    console.log("Document written with ID: ", docRef.id);
+    return true
+  }catch (error) {
+    console.error("Error adding document ", error)
+    return false;
+  }
+}
 
 interface FormValues {
   firstName: string;
@@ -14,10 +33,7 @@ interface FormValues {
   email: string;
 }
 
-interface RegisterResponse {
-  filePath: string;
-  // Add any other properties returned in the response if needed
-}
+
 
 const validate = (values: FormValues) => {
 
@@ -56,12 +72,15 @@ const SignupForm: React.FC = () => {
       try {
      
         formik.resetForm()
-        const userDetails = JSON.parse(localStorage.getItem('userDetails') || '[]');
-    userDetails.push(values);
-    localStorage.setItem('userDetails', JSON.stringify(userDetails));
-        const response: AxiosResponse<RegisterResponse> = await axios.post('/api/hello', values);
-        const { filePath } = response.data;
-        window.location.replace("/thank-you")
+        const { firstName, lastName, email } = values; 
+        const added = await addDataToFireStore(firstName, lastName, email);
+        if (added) {
+          console.log("Data added to Firestore successfully");
+          window.location.replace("/thank-you");
+        } else {
+          console.log("Failed to add data to Firestore");
+          alert('Registration failed!');
+        }
       
       } catch (error) {
         alert('Registration failed!');
@@ -142,3 +161,10 @@ const SignupForm: React.FC = () => {
 };
 
 export default SignupForm;
+
+
+
+
+
+//mongodb+srv://oluseyitimilehin3:<password>@cluster0.rbv6pyb.mongodb.net/
+//mongodb+srv://oluseyitimilehin3:<password>@cluster0.rbv6pyb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0

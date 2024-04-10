@@ -13,7 +13,7 @@ interface UserData {
 }
 
 async function fetchDataFromFirestore(): Promise<UserData[]> {
-  const querySnapshot = await getDocs(collection(db, "details"));
+  const querySnapshot = await getDocs(collection(db, "users"));
 
   const data: UserData[] = [];
   querySnapshot.forEach((doc) => {

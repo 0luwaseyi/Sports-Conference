@@ -120,14 +120,14 @@ const SignupForm: React.FC = () => {
         <Image src="/logoone.png" alt = "logo" width={90} height={90}/>
         </div>
       <h1 className='text-2xl lg:text-3xl mt-[7.5vw] lg:mt-[4vw]  lg:mx-[4vw] font-bold text-center text-[#fff]'>Register Now!</h1>
-      <p className='text-lg  mx-[6vw] lg:mx-[3vw] my-[2.5vw] lg:text-sm text-[#fff] text-center'>Just a step away from becoming the next big thing in sports!</p>
+      <p className='text-xs  mx-[6vw] lg:mx-[3vw] my-[2.5vw] lg:text-sm text-[#fff] text-center'>Just a step away from becoming the next big thing in sports!</p>
       </div>
       <div className=''>
         <form onSubmit={formik.handleSubmit} 
           className='mx-[7vw] md:mx-[25vw] lg:mx-[36vw] border border-[#808080] p-5 rounded-md bg-[#161b22]'>
-          <label htmlFor="firstName" className='font-bold text-[#fff]'>First Name</label>
+          <label htmlFor="firstName" className='text-[#fff]'>First name</label>
           <input
-            className='border border-[#a0aeco] bg-[#0d1117] rounded-md mt-3 caret-[#fff] p-2 w-full focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#fff]'
+            className='border border-[#808080] bg-[#0d1117] rounded-lg my-3 caret-[#fff] p-1.5 w-full focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#fff]'
             id="firstName"
             ref={inputRef}
             name="firstName"
@@ -135,37 +135,36 @@ const SignupForm: React.FC = () => {
             placeholder='John'
             onChange={formik.handleChange}
             value={formik.values.firstName}
-            style={{ width: '100%', padding: '8px', marginBottom: '10px', border: '1px solid #ccc', borderRadius: '3px' }}
+          
           />
-          {formik.errors.firstName ? <div className='text-[#fff]'>{formik.errors.firstName}</div> : null}
+          {formik.errors.firstName ? <div className='text-[#ff0000]'>{formik.errors.firstName}!</div> : null}
 
-          <label htmlFor="lastName" className='font-bold text-[#fff]'>Last Name</label>
+          <label htmlFor="lastName" className='text-[#fff]'>Last name</label>
           <input
-            className='border border-[#a0aeco] bg-[#0d1117] rounded-md mt-3 caret-[#fff] p-2 w-full focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#fff]'
+            className='border border-[#808080] bg-[#0d1117] rounded-lg my-3 caret-[#fff] p-1.5 w-full focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#fff]'
             id="lastName"
             name="lastName"
             type="text"
             placeholder='Smith'
             onChange={formik.handleChange}
             value={formik.values.lastName}
-            style={{ width: '100%', padding: '8px', marginBottom: '10px', border: '1px solid #ccc', borderRadius: '3px' }}
-          />
-          {formik.errors.lastName ? <div className='text-[#fff]'>{formik.errors.lastName}</div> : null}
 
-          <label htmlFor="email" className='font-bold text-[#fff]'>Email Address</label>
+          />
+          {formik.errors.lastName ? <div className='text-[#ff0000]'>{formik.errors.lastName}!</div> : null}
+
+          <label htmlFor="email" className='text-[#fff]'>Email address</label>
           <input
-           className='border border-[#a0aeco] bg-[#0d1117] rounded-md mt-3 caret-[#fff] p-2 w-full focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#fff]'
+           className='border border-[#808080] bg-[#0d1117] rounded-lg my-3 caret-[#fff] p-1.5 w-full focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#fff]'
             id="email"
             name="email"
             type="email"
             placeholder='Johnsmith@gmail.com'
             onChange={formik.handleChange}
             value={formik.values.email}
-            style={{ width: '100%', padding: '8px', marginBottom: '10px', border: '1px solid #ccc', borderRadius: '3px' }}
           />
-          {formik.errors.email ? <div className='text-[#fff]'>{formik.errors.email}</div> : null}
+          {formik.errors.email ? <div className='text-[#ff0000]'>{formik.errors.email}!</div> : null}
 
-          <button type="submit" className='p-3 bg-[#2ea043] text-[#fff] w-[100%] border-[#2ea043] rounded-md'>Register</button>
+          <button type="submit" className='p-3 bg-[#2ea043] text-[#fff] w-[100%] border-[#2ea043] rounded-md mt-[0.5vw]'>Register</button>
       
         </form>
 

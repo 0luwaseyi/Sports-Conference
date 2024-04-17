@@ -25,9 +25,9 @@ const Modal: React.FC<ModalProps> = ({ onClose }) => {
                 </svg>
               </div>
               <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                <h3 className="text-lg leading-6 font-medium text-gray-900">User Already Exists</h3>
+                <h3 className="text-lg leading-6 font-medium text-gray-900">Duplicate Registration</h3>
                 <div className="mt-2">
-                  <p className="text-sm text-gray-500">A user with the same details already exists.</p>
+                  <p className="text-sm text-gray-500">Email has already been registered!</p>
                 </div>
               </div>
             </div>

@@ -124,10 +124,10 @@ const SignupForm: React.FC = () => {
       </div>
       <div className=''>
         <form onSubmit={formik.handleSubmit} 
-          className='mx-[9vw] md:mx-[25vw] lg:mx-[36vw] border border-[#808080] p-5 rounded-md bg-[#161b22]'>
+          className='mx-[7vw] md:mx-[25vw] lg:mx-[36vw] border border-[#808080] p-5 rounded-md bg-[#161b22]'>
           <label htmlFor="firstName" className='font-bold text-[#fff]'>First Name</label>
           <input
-            className='border border-[#a0aeco] bg-[#0d1117] rounded-md mt-3 caret-[#fff] p-2 w-full focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500'
+            className='border border-[#a0aeco] bg-[#0d1117] rounded-md mt-3 caret-[#fff] p-2 w-full focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#fff]'
             id="firstName"
             ref={inputRef}
             name="firstName"
@@ -141,7 +141,7 @@ const SignupForm: React.FC = () => {
 
           <label htmlFor="lastName" className='font-bold text-[#fff]'>Last Name</label>
           <input
-            className='border border-[#a0aeco] bg-[#0d1117] rounded-md mt-3 caret-[#fff] p-2 w-full focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500'
+            className='border border-[#a0aeco] bg-[#0d1117] rounded-md mt-3 caret-[#fff] p-2 w-full focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#fff]'
             id="lastName"
             name="lastName"
             type="text"
@@ -154,7 +154,7 @@ const SignupForm: React.FC = () => {
 
           <label htmlFor="email" className='font-bold text-[#fff]'>Email Address</label>
           <input
-           className='border border-[#a0aeco] bg-[#0d1117] rounded-md mt-3 caret-[#fff] p-2 w-full focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500'
+           className='border border-[#a0aeco] bg-[#0d1117] rounded-md mt-3 caret-[#fff] p-2 w-full focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#fff]'
             id="email"
             name="email"
             type="email"
@@ -165,7 +165,7 @@ const SignupForm: React.FC = () => {
           />
           {formik.errors.email ? <div className='text-[#fff]'>{formik.errors.email}</div> : null}
 
-          <button type="submit" style={{ width: '100%', padding: '20px', backgroundColor: '#2ea043', color: '#fff', border: 'none', borderRadius: '3px', cursor: 'pointer' }}>Register</button>
+          <button type="submit" className='p-3 bg-[#2ea043] text-[#fff] w-[100%] border-[#2ea043] rounded-md'>Register</button>
       
         </form>
 

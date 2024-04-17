@@ -22,7 +22,7 @@ const Home: React.FC = () => {
           particleColor="#fff"
         />
       </div>
-            <Carousel autoPlay infiniteLoop interval={8000}   showArrows={false} showThumbs={false}>
+            <Carousel autoPlay infiniteLoop interval={8000} showIndicators={false} showStatus={false} verticalSwipe="natural" swipeable   showArrows={false} showThumbs={false}>
                 {[ 
                     <div className='overflow-hidden  h-screen z-10 object-cover relative back-img bg-center bg-cover' key="image1"> {/* Provide a unique key */}
                     </div>,
@@ -52,7 +52,7 @@ const Home: React.FC = () => {
             
 
               <div className="">
-                <p className="text-[#fff] mx-[5vw] text-lg lg:text-xl text-center">Join global leaders and experts as we unlock the secrets to success,<br className="hidden lg:block"/> foster innovation, and propel the next generation of athletes to Olympic glory.</p>
+                <p className="text-[#fff] mx-[5vw] text-md lg:text-xl text-center">Join global leaders and experts as we unlock the secrets to success,<br className="hidden lg:block"/> foster innovation, and propel the next generation of athletes to Olympic glory.</p>
               </div>
 
               <div className="p-5">
@@ -62,13 +62,13 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            <div className="absolute justify-start top-0  ml-[5vw] my-[2vw] ">
+            <div className="absolute justify-start top-0  ml-[5vw] my-[3vw] lg:my-[2vw] ">
               <Image src="/logo.png" alt = "logo" width={70} height={70}/>
 
             </div>
             
-            <div className="absolute flex justify-end top-0 right-0 mr-[5vw] my-[1vw] ">
-              <Image src="/logoone.png" alt = "logo" width={90} height={90}/>
+            <div className="absolute flex justify-end top-0 right-0 mr-[5vw] my-[0.2vw] lg:my-[0.6vw] ">
+              <Image src="/logoone.png" alt = "logo" width={95} height={90}/>
 
             </div>
         </div>
